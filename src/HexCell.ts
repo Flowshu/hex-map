@@ -49,7 +49,7 @@ class HexCell {
     this._mesh.enableEdgesRendering();
     this._mesh.edgesWidth = 4.0;
     this._mesh.edgesColor = new BABYLON.Color4(0, 0, 1, 1);
-    //this.configureCellBehaviour(scene);
+    this.configureCellBehaviour(scene);
   }
 
   public get mesh(): Mesh {
@@ -59,7 +59,7 @@ class HexCell {
   public get neighbors(): Object {
     return this._neighbors;
   }
-
+/*
   public getNeighborAt(direction : string) : HexCell{
       if (this.neighbors.hasOwnProperty(direction)) {
           return this.neighbors[direction];
@@ -71,7 +71,7 @@ class HexCell {
         this.neighbors[direction] = neighbor;
     }
   }
-
+*/
   public set neighbors(v: Object) {
     this._neighbors = v;
   }
@@ -139,9 +139,9 @@ class HexCell {
    * @returns the distance to another given HexCell (in HexCell steps)
    */
   public distanceTo(hexCell: HexCell): number {
-    let disX: number = Math.abs(this.x - hexCell.x);
-    let disY: number = Math.abs(this.y - hexCell.y);
-    let disZ: number = Math.abs(this.z - hexCell.z);
+    let disX: number = Math.abs(this.coordinates.x - hexCell.coordinates.x);
+    let disY: number = Math.abs(this.coordinates.y - hexCell.coordinates.y);
+    let disZ: number = Math.abs(this.coordinates.z - hexCell.coordinates.z);
     return (disX + disY + disZ) / 2;
   }
 }
