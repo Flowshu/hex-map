@@ -8,7 +8,9 @@
     "license": "MIT",
     "scripts": {
         "build": "webpack",
-        "start": "webpack-dev-server"
+        "start": "webpack-dev-server --hot",
+        "test": "jest",
+        "coverage": "jest --coverage"
     },
     "dependencies": {
         "babylonjs": "^4.1.0",
@@ -17,6 +19,9 @@
         "babylonjs-materials": "^4.1.0"
     },
     "devDependencies": {
+        "@types/jest": "^25.2.1",
+        "jest": "^25.3.0",
+        "ts-jest": "^25.3.1",
         "ts-loader": "^6.2.1",
         "typescript": "^3.8.3",
         "webpack": "^4.42.0",

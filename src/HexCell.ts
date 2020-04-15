@@ -46,10 +46,11 @@ class HexCell {
       scene
     );
     this._mesh.position.y = this._elevationLevel;
-    this._mesh.enableEdgesRendering();
-    this._mesh.edgesWidth = 4.0;
-    this._mesh.edgesColor = new BABYLON.Color4(0, 0, 1, 1);
-    this.configureCellBehaviour(scene);
+    //this._mesh.freezeWorldMatrix();
+    //this._mesh.enableEdgesRendering();
+    //this._mesh.edgesWidth = 4.0;
+    //this._mesh.edgesColor = new BABYLON.Color4(0, 1, 0, 1);
+    //this.configureCellBehaviour(scene);
   }
 
   public get mesh(): Mesh {
